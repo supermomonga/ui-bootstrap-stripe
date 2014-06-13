@@ -1,3 +1,19 @@
+
+:scss
+  .benri-table-wrapper{
+    padding-left: 120px;
+  }
+  .benri{
+    .benri-button-wrapper{
+      display: inline-block;
+      margin: 0 0 0 -120px;
+      padding-right: 20px;
+      .benri-button{
+        width: 100px;
+      }
+    }
+  }
+
 .container
   %br
   %table.table.table-striped.table-bordered
@@ -15,21 +31,22 @@
         %th mado
         %th mado
   %br
-  %div{"ng-controller" => "StripeDemoCtrl"}
-    %table.table.table-striped.table-bordered
-      %thead
-        %tr{ "ng-repeat" => "month in months", "ng-class" => "$even ? 'warning' : 'info'" }
-          %th
-            %dev{ :style => "position:relative; right: 40px;" }
-              %button.btn.btn-default
-                {{ month }}
-          %th
-            {{ month }}
-
--#               %label.checkbox
--#                 %input{ :type => "checkbox" }
-
--#             %dev{ :style => "position:absolute; top: 10px;" }
+  .benri-table-wrapper
+    %div{"ng-controller" => "StripeDemoCtrl"}
+      %table.table.table-striped.table-bordered.benri-table
+        %thead
+          %tr{ "ng-repeat" => "month in months", "ng-class" => "$even ? 'warning' : 'info'" }
+            %th.benri
+              .benri-button-wrapper
+                .benri-button
+                  %button.btn.btn-default.btn-block
+                    {{ month }}
+              {{ month }}
+  
+  -#               %label.checkbox
+  -#                 %input{ :type => "checkbox" }
+  
+  -#             %dev{ :style => "position:absolute; top: 10px;" }
 
 
 
