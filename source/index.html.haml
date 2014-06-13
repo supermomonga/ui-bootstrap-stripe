@@ -1,0 +1,35 @@
+.container
+  %br
+  %table.table.table-striped.table-bordered
+    %thead
+      %tr.warning
+        %th homu
+        %th homu
+        %th homu
+      %tr.info
+        %th mami
+        %th mami
+        %th mami
+      %tr.warning
+        %th mado
+        %th mado
+        %th mado
+  %br
+  %div{"ng-controller" => "StripeDemoCtrl"}
+    %table.table.table-striped.table-bordered
+      %thead
+        %tr{ "ng-repeat" => "month in months", "ng-class" => "$even ? 'warning' : 'info'" }
+          %th
+            %dev{ :style => "position:relative; right: 40px;" }
+              %button.btn.btn-default
+                {{ month }}
+          %th
+            {{ month }}
+
+-#               %label.checkbox
+-#                 %input{ :type => "checkbox" }
+
+-#             %dev{ :style => "position:absolute; top: 10px;" }
+
+
+
